@@ -1,26 +1,84 @@
 <script setup lang="ts">
-import Versions from './components/Versions.vue'
+import Upper from './components/Upper.vue';
+import Left from './components/Left.vue'
+import Content from './components/Content.vue'
+import { ref } from 'vue';
 
-const ipcHandle = () => window.electron.ipcRenderer.send('ping')
+const menuDisplay = ref(false);
+const activeView = ref('Your Skills')
+
+function menuDisplayUpdated(value) {
+  menuDisplay.value = value;
+}
+
+function viewChanges(view) {
+  activeView.value = view;
+  console.log(view)
+}
+
 </script>
 
 <template>
-  <img alt="logo" class="logo" src="./assets/electron.svg" />
-  <div class="creator">Powered by electron-vite</div>
-  <div class="text">
-    Build an Electron app with
-    <span class="vue">Vue</span>
-    and
-    <span class="ts">TypeScript</span>
-  </div>
-  <p class="tip">Please try pressing <code>F12</code> to open the devTool</p>
-  <div class="actions">
-    <div class="action">
-      <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">Documentation</a>
-    </div>
-    <div class="action">
-      <a target="_blank" rel="noreferrer" @click="ipcHandle">Send IPC</a>
+  <div id="app">
+    <Upper @menu-display-updated="menuDisplayUpdated($event)" />
+    <div id="main">
+      <Transition name="slide-fade">
+        <Left v-if="menuDisplay" @view-changes="viewChanges($event)"/>
+      </Transition>
+      <Content />
     </div>
   </div>
-  <Versions />
 </template>
+
+<style scoped>
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#upper-pannel {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+#main{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+#left-pannel {
+  width: 30%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+#content-pannel {
+  width: 70%;
+  height: 100%;
+  padding: 1rem;
+  transition: all 10s ease-out; 
+}
+</style>
