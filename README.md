@@ -1,6 +1,6 @@
 # skillable
 
-An Electron application with Vue and TypeScript
+Is an app designed to help you organise and manage your skills
 
 ## Recommended IDE Setup
 
