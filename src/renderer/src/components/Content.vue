@@ -13,7 +13,6 @@ const props = defineProps<{
 
 <template>
     <div id="content-pannel">
-        <!--YourSkills v-if="view === 'Your Skills'" /-->
         <KeepAlive>
             <YourSkills v-if="props.view == 'Your Skills'" />
             <Account v-else-if="props.view == 'Account'" />

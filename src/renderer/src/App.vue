@@ -19,7 +19,7 @@ function viewChanges(view) {
 
 <template>
   <div id="app">
-    <Upper @menu-display-updated="menuDisplayUpdated($event)" />
+    <Upper :active-view="activeView" @menu-display-updated="menuDisplayUpdated($event)" />
     <div id="main">
       <Transition name="slide-fade">
         <Left v-if="menuDisplay" @view-changes="viewChanges($event)"/>
@@ -36,14 +36,17 @@ function viewChanges(view) {
   display: flex;
   flex-direction: column;
 }
+
 #upper-pannel {
   width: 100%;
   height: 10%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
   padding: 1rem;
 }
+
 #main{
   display: flex;
   flex-direction: row;
@@ -60,6 +63,13 @@ function viewChanges(view) {
   align-items: center;
 }
 
+#content-pannel {
+  width: 70%;
+  height: 100%;
+  padding: 1rem;
+  transition: all 10s ease-out; 
+}
+
 .slide-fade-enter-active {
   transition: all 0.5s ease-out;
 }
@@ -74,10 +84,4 @@ function viewChanges(view) {
   opacity: 0;
 }
 
-#content-pannel {
-  width: 70%;
-  height: 100%;
-  padding: 1rem;
-  transition: all 10s ease-out; 
-}
 </style>
