@@ -13,7 +13,6 @@ function menuDisplayUpdated(value) {
 
 function viewChanges(view) {
   activeView.value = view;
-  console.log(view)
 }
 
 </script>
