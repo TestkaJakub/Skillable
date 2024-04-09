@@ -2,10 +2,10 @@
 import { ref } from 'vue';
 
 const views = ref([
-    { name: 'Your Skills', path: '/skills', isActive: true },
-    { name: 'Account', path: '/account', isActive: false },
-    { name: 'Options', path: '/options', isActive: false },
-    { name: 'About', path: '/about', isActive: false }
+    { name: 'Your Skills', isActive: true },
+    { name: 'Account', isActive: false },
+    { name: 'Settings', isActive: false },
+    { name: 'About', isActive: false }
 ]);
 
 const emit = defineEmits();

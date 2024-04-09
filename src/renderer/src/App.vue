@@ -25,7 +25,7 @@ function viewChanges(view) {
       <Transition name="slide-fade">
         <Left v-if="menuDisplay" @view-changes="viewChanges($event)"/>
       </Transition>
-      <Content />
+      <Content :view="activeView" />
     </div>
   </div>
 </template>

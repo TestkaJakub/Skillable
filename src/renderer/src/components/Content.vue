@@ -1,11 +1,16 @@
 <script setup lang="ts">
+const props = defineProps<{
+    view: string
+}>()
+
+
 </script>
 
 <template>
     <div id="content-pannel">
         TO DO:
         <ul>
-            <li>Make changing view actually do something</li>
+            <li>{{props.view}}</li>
         </ul>
     </div>
 </template>
