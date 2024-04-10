@@ -43,7 +43,6 @@ function toggleMenu() {
     border: none;
     cursor: pointer;
     font-size: 2rem;
-    color: #c5c5c5;
 }
 @media screen and (min-width: 730px) {
     #app-view-info {
@@ -58,5 +57,13 @@ function toggleMenu() {
     #app-view-info {
         align-content: center;
     }
+}
+
+#logo {
+    filter: invert(54%) sepia(96%) saturate(217%) hue-rotate(132deg) brightness(91%) contrast(87%);
+}
+
+.light-theme #logo {
+    filter: invert(45%) sepia(11%) saturate(4789%) hue-rotate(356deg) brightness(87%) contrast(80%);
 }
 </style>

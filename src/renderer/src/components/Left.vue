@@ -38,13 +38,13 @@ button {
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
-    color: #c5c5c5;
+    color: var(--text-color-unimportant);
     align-self: flex-start;
-}
-button.activefalse:hover {
-    color: #f5f5f5;
+
+    transition: all 0.3s ease-out 0.175s ;
 }
 .activetrue {
-    color: #a2a2a2;
+  cursor: default;
+  color: var(--secondary-color-hovered);
 }
 </style>

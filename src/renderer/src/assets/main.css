@@ -1,29 +1,99 @@
 @import './base.css';
 
+:root {
+  --background-color: #021c3f;
+  --logo-color: #51a8aa;
+  --secondary-color: #51a8aa;
+  --header-color: #f23853;
+  --secondary-color-hovered: #f23853;
+  --text-color: #cde8e9;
+}
 
+:root.light-theme {
+  --background-color: #ece7da;
+  --logo-color: #ab641d;
+  --secondary-color: #ab641d;
+  --header-color: #0a0907;
+  --secondary-color-hovered: #0a0907;
+  --text-color: #5c4328;
+}
+
+@media(prefers-color-scheme: light) {
+  :root {
+    --background-color: #ece7da;
+    --logo-color: #ab641d;
+    --secondary-color: #ab641d;
+    --header-color: #0a0907;
+    --secondary-color-hovered: #0a0907;
+    --text-color: #5c4328;
+  }
+
+  :root.dark-theme{
+    --background-color: #021c3f;
+    --logo-color: #51a8aa;
+    --secondary-color: #51a8aa;
+    --header-color: #f23853;
+    --secondary-color-hovered: #f23853;
+    --text-color: #cde8e9;
+  }
+}
+
+:root > * {
+  transition: all 0.5s ease-in-out 0.1s;
+}
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: --color-background;
-  color: --color-text;
   display: flex;
   justify-content: center;
   align-items: center;
+
   margin: 0;
   padding: 0;
   min-width: 665px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  
+  transition: all 0.3s ease-in-out 0.1s;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+h1, h2, h3, h4, h5, h6, #menu-display-button  {
+  color: var(--header-color);
+}
+
+a, button.activefalse:hover, .settings-button { 
+  color: var(--secondary-color);
+}
+
+a:hover, li, .settings-button:hover {
+  color: var(--secondary-color-hovered);
+}
+
+button.settings-button {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--background-color);
+}
+
+.settings-button:hover {
+  background-color: var(--secondary-color);
 }
 
 a {
-  color: #5555ff;
   text-decoration: none;
+
+  transition: color 0.3s ease-in-out 0.1s;
 }
+
 a:hover {
-  color: #8888ff;
+  transition: ease-in-out 0.5s;
 }
 
 li {
   list-style-type: disc;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

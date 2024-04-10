@@ -15,6 +15,19 @@ function viewChanges(view) {
   activeView.value = view;
 }
 
+const root = document.querySelector(':root');
+
+const currentTheme = ref(localStorage.getItem('theme') || 'dark-theme');
+if (currentTheme.value === 'light-theme') root?.classList.add('light-theme');
+
+if(currentTheme.value === 'light-theme' && !root?.classList.contains('light-theme'))
+{
+  root?.classList.add('light-theme');
+}
+else if(currentTheme.value === 'dark-theme' && root?.classList.contains('light-theme'))
+{
+  root?.classList.remove('light-theme');
+}
 </script>
 
 <template>
@@ -78,7 +91,7 @@ function viewChanges(view) {
 }
 
 .slide-fade-leave-active {
-  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .slide-fade-enter-from,

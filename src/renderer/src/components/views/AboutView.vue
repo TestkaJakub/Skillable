@@ -35,15 +35,3 @@
         </p>
     </div>
 </template>
-<style scoped>
-h2 {
-    padding: 0rem 0.5rem;
-}
-p {
-    padding: 0.5rem;
-    text-align: justify;
-}
-ul {
-    padding-left: 3rem;
-}
-</style>
