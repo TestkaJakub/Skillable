@@ -13,12 +13,19 @@ const props = defineProps<{
 
 <template>
     <div id="content-pannel">
-        <KeepAlive>
-            <YourSkills v-if="props.view == 'Your Skills'" />
-            <Account v-else-if="props.view == 'Account'" />
-            <Settings v-else-if="props.view == 'Settings'" />
-            <About v-else-if="props.view == 'About'" />
-            <p v-else>Nothing to see here</p>
-        </KeepAlive>
+        <div id="general-view">
+            <KeepAlive>
+                <YourSkills v-if="props.view == 'Your Skills'" />
+                <Account v-else-if="props.view == 'Account'" />
+                <Settings v-else-if="props.view == 'Settings'" />
+                <About v-else-if="props.view == 'About'" />
+                <p v-else>Nothing to see here</p>
+            </KeepAlive>
+        </div>
     </div>
 </template>
+<style scoped>
+#general-view {
+    width: 80%;
+}
+</style>

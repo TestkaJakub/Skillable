@@ -64,10 +64,13 @@ function viewChanges(view) {
 }
 
 #content-pannel {
-  width: 70%;
+  width: 100%;
   height: 100%;
   padding: 1rem;
   transition: all 10s ease-out; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slide-fade-enter-active {

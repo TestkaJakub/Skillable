@@ -13,4 +13,17 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
+  min-width: 665px;
+}
+
+a {
+  color: #5555ff;
+  text-decoration: none;
+}
+a:hover {
+  color: #8888ff;
+}
+
+li {
+  list-style-type: disc;
 }
