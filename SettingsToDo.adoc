@@ -1,8 +1,4 @@
 // These probably can be saved in localStorage
-== APP SETTINGS
-Theme: Dark, Light, Oled?
-Theme-additional-color: LightBlue, DarkBlue, Lime, Green, Red, Pink, Orage, Violet, Yellow, Custom?
-
 == API SETTINGS
 OfficialyHosted: true, false
 Host: https://api.example.com

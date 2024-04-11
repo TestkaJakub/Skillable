@@ -44,16 +44,16 @@ function toggleMenu() {
     cursor: pointer;
     font-size: 2rem;
 }
-@media screen and (min-width: 730px) {
+@media screen and (min-width: 992px) {
     #app-view-info {
         flex: 0 1 auto;
         height: 100px;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%) translateY(32%);
+        transform: translateX(-50%) translateY(23%);
     }
 }
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 992px) {
     #app-view-info {
         align-content: center;
     }
