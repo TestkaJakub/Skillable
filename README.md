@@ -1,6 +1,9 @@
-# skillable
+# Skillable
 
-Is an app designed to help you organise and manage your skills
+Skillable is a platform that helps you to keep track of your skills and knowledge. 
+I believe that everyone should have the opportunity to learn and grow, and that 
+it should be easy to keep track of your progress. I want to help you to reach your 
+goals and to make it easier for you to show your skills to the world.
 
 ## Recommended IDE Setup
 
